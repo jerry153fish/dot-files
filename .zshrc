@@ -84,13 +84,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$PATH:`yarn global bin`"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$PATH:$HOME/Projects/depot_tools
+export PATH="$HOME/.cargo/bin:$PATH"
+alias gth="git push"
 alias gta="git add -A :/ && git commit -m"
 alias gts="git status"
 alias gtc="git checkout"
-alias gtp="git push"
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+alias gtb="git branch"
+# export VIRTUALENVWRAPPER_PYTHON=`which python3`
+# export WORKON_HOME=~/Envs
+# source /usr/local/bin/virtualenvwrapper.sh
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 eval "$(rbenv init -)"
-eval $(thefuck --alias)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
