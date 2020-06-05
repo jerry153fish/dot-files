@@ -97,9 +97,8 @@ alias gtb="git branch"
 alias gpo="git push -u origin"
 alias prp="pipenv run python"
 alias gbp="git pull && git submodule update --init --recursive"
-# export VIRTUALENVWRAPPER_PYTHON=`which python3`
-# export WORKON_HOME=~/Envs
-# source /usr/local/bin/virtualenvwrapper.sh
+alias k="kubectl"
+
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 eval "$(rbenv init -)"
 
@@ -109,11 +108,10 @@ eval "$(rbenv init -)"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=/Users/jerry/flutter/bin:$PATH
+export PATH="$PATH:/Users/jerry/istio-1.6.0/bin"
 # vf - fuzzy open with vim from anywhere
 # ex: vf word1 word2 ... (even part of a file name)
 # zsh autoload function
@@ -170,4 +168,3 @@ fstash() {
   done
 }
 
-export PATH=~/Library/Python/3.7/bin:$PATH
