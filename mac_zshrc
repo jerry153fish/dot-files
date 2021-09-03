@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jerry/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 DEFAULT_USER=`whoami`
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -107,15 +107,8 @@ alias k="kubectl"
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/jerry/Documents/Project/emsdk/node/8.9.1_64bit/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/Users/jerry/istio-1.11.0/bin:$PATH"
 
 # fh - repeat history
 fh() {
@@ -129,7 +122,6 @@ fbr() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-alias mkb="minikube start --cpus 4 --memory 24192 --disk-size=50G --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.address=0.0.0.0 --extra-config=controller-manager.address=0.0.0.0"
 alias kus="kustomize"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh) || true
 alias drn="docker rmi \$(docker images --filter \"dangling=true\" -q --no-trunc) -f"
@@ -140,10 +132,7 @@ alias timeout="gtimeout"
 eval "$(rbenv init -)"
 
 # Created by `userpath` on 2020-07-26 23:29:47
-export PATH="$PATH:/Users/jerry/.local/bin"
-export PATH="$PATH:/Users/jerry/Library/Python/3.8/bin"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export PATH=$PATH:/Users/jerry/.linkerd2/bin
 
 SAVEHIST=90000
 export PATH="/usr/local/sbin:$PATH"
