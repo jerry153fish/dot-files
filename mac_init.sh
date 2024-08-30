@@ -16,3 +16,4 @@ brew install fzf
 brew install --cask raycast
 brew install jordanbaird-ice
 brew install --cask grammarly-desktop
+brew install stats
